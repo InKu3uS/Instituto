@@ -1,17 +1,18 @@
 package es.iespuertodelacruz.nefta;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
-public class Alumnos extends Persona {
+public class Alumno extends Persona {
 
     private static final long serialVersionUID = -8998687794343508825L;
 
-    public Notas notas;
-
+    ArrayList<Notas> listanotas = null;
+    
     /**
      * Constructor vacio
      */
-    public Alumnos() {
+    public Alumno() {
 
     }
 
@@ -24,7 +25,7 @@ public class Alumnos extends Persona {
      * @param notas     del alumno
      * @throws Exception
      */
-    public Alumnos(String dni, String nombre, String apellidos, Notas notas) throws Exception {
+    public Alumno(String dni, String nombre, String apellidos, Notas notas) throws Exception {
         super(dni, nombre, apellidos);
         this.notas = notas;
     }
@@ -45,10 +46,10 @@ public class Alumnos extends Persona {
     public boolean equals(Object o) {
         if (o == this)
             return true;
-        if (!(o instanceof Alumnos)) {
+        if (!(o instanceof Alumno)) {
             return false;
         }
-        Alumnos alumnos = (Alumnos) o;
+        Alumno alumnos = (Alumno) o;
         return Objects.equals(notas, alumnos.notas);
     }
 

@@ -8,14 +8,12 @@ import es.iespuertodelacruz.nefta.exceptions.ProfesorException;
 
 public class Instituto {
 
-    ArrayList<Alumnos> listaalumnos = null;
-    ArrayList<Notas> listanotas = null;
+    ArrayList<Alumno> listaalumnos = null;
     ArrayList<Aulas> listaaulas = null;
-    ArrayList<Profesores> listaprofesores = null;
+    ArrayList<Profesor> listaprofesores = null;
 
     public Instituto() {
         listaalumnos = new ArrayList<>();
-        listanotas = new ArrayList<>();
         listaaulas = new ArrayList<>();
         listaprofesores = new ArrayList<>();
 
@@ -27,7 +25,7 @@ public class Instituto {
      * @param alumno a buscar
      * @return true/false
      */
-    public boolean alumnoExiste(Alumnos alumno) {
+    public boolean alumnoExiste(Alumno alumno) {
         return listaalumnos.contains(alumno);
     }
 
@@ -37,7 +35,7 @@ public class Instituto {
      * @param profesor a buscar
      * @return true/false
      */
-    public boolean profesorExiste(Profesores profesor) {
+    public boolean profesorExiste(Profesor profesor) {
         return listaprofesores.contains(profesor);
     }
 
@@ -67,7 +65,7 @@ public class Instituto {
      * @param alumno a insertar
      * @throws AlumnoException error controlado
      */
-    public void insertarAlumno(Alumnos alumno) throws AlumnoException {
+    public void insertarAlumno(Alumno alumno) throws AlumnoException {
         if (!alumnoExiste(alumno)) {
             listaalumnos.add(alumno);
         } else {
@@ -81,7 +79,7 @@ public class Instituto {
      * @param alumno a eliminar
      * @throws AlumnoException error controlado
      */
-    public void borrarAlumno(Alumnos alumno) throws AlumnoException {
+    public void borrarAlumno(Alumno alumno) throws AlumnoException {
         if (alumnoExiste(alumno)) {
             listaalumnos.remove(alumno);
         } else {
@@ -95,7 +93,7 @@ public class Instituto {
      * @param profesor a insertar
      * @throws ProfesorException error controlado
      */
-    public void insertarProfesor(Profesores profesor) throws ProfesorException {
+    public void insertarProfesor(Profesor profesor) throws ProfesorException {
         if (!profesorExiste(profesor)) {
             listaprofesores.add(profesor);
         } else {
@@ -109,7 +107,7 @@ public class Instituto {
      * @param profesor a eliminar
      * @throws ProfesorException error controlado
      */
-    public void borrarProfesor(Profesores profesor) throws ProfesorException {
+    public void borrarProfesor(Profesor profesor) throws ProfesorException {
         if (profesorExiste(profesor)) {
             listaprofesores.remove(profesor);
         } else {

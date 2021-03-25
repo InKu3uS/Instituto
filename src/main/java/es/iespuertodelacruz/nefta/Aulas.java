@@ -4,7 +4,7 @@ public class Aulas {
 
     int piso;
     int numero;
-    public Alumnos alumnos;
+    public Alumno alumnos;
 
     /**
      * Constructor vacio
@@ -18,7 +18,7 @@ public class Aulas {
      * @param piso   del aula
      * @param numero del aula
      */
-    public Aulas(int piso, int numero, Alumnos alumnos) {
+    public Aulas(int piso, int numero, Alumno alumnos) {
         this.piso = piso;
         this.numero = numero;
         this.alumnos = alumnos;
@@ -37,11 +37,11 @@ public class Aulas {
         return this.numero;
     }
 
-    public Alumnos getAlumnos() {
+    public Alumno getAlumnos() {
         return this.alumnos;
     }
 
-    public void setAlumnos(Alumnos alumnos) {
+    public void setAlumnos(Alumno alumnos) {
         this.alumnos = alumnos;
     }
 

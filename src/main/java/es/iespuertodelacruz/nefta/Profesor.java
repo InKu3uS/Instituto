@@ -2,7 +2,7 @@ package es.iespuertodelacruz.nefta;
 
 import java.util.Objects;
 
-public class Profesores extends Persona {
+public class Profesor extends Persona {
 
     private static final long serialVersionUID = -7098513995355326641L;
 
@@ -11,7 +11,7 @@ public class Profesores extends Persona {
     /**
      * Constructor vacio
      */
-    public Profesores() {
+    public Profesor() {
     }
 
     /**
@@ -23,7 +23,7 @@ public class Profesores extends Persona {
      * @param aulas     en las que imparte clase el profesor
      * @throws Exception
      */
-    public Profesores(String dni, String nombre, String apellidos, Aulas aulas) throws Exception {
+    public Profesor(String dni, String nombre, String apellidos, Aulas aulas) throws Exception {
         super(dni, nombre, apellidos);
         this.aulas = aulas;
     }
@@ -44,10 +44,10 @@ public class Profesores extends Persona {
     public boolean equals(Object o) {
         if (o == this)
             return true;
-        if (!(o instanceof Profesores)) {
+        if (!(o instanceof Profesor)) {
             return false;
         }
-        Profesores profesores = (Profesores) o;
+        Profesor profesores = (Profesor) o;
         return Objects.equals(aulas, profesores.aulas);
     }
 
