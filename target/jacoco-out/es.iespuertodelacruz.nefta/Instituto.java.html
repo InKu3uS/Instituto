@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Instituto.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Instituto</a> &gt; <a href="index.source.html" class="el_package">es.iespuertodelacruz.nefta</a> &gt; <span class="el_source">Instituto.java</span></div><h1>Instituto.java</h1><pre class="source lang-java linenums">package es.iespuertodelacruz.nefta;
+
+import java.util.ArrayList;
+
+import es.iespuertodelacruz.nefta.exceptions.AlumnoException;
+import es.iespuertodelacruz.nefta.exceptions.AulaException;
+import es.iespuertodelacruz.nefta.exceptions.ProfesorException;
+
+public class Instituto {
+
+<span class="nc" id="L11">    ArrayList&lt;Alumnos&gt; listaalumnos = null;</span>
+<span class="nc" id="L12">    ArrayList&lt;Notas&gt; listanotas = null;</span>
+<span class="nc" id="L13">    ArrayList&lt;Aulas&gt; listaaulas = null;</span>
+<span class="nc" id="L14">    ArrayList&lt;Profesores&gt; listaprofesores = null;</span>
+
+<span class="nc" id="L16">    public Instituto(){</span>
+<span class="nc" id="L17">        listaalumnos = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L18">        listanotas = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L19">        listaaulas = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L20">        listaprofesores = new ArrayList&lt;&gt;();</span>
+        
+<span class="nc" id="L22">    }</span>
+
+    /**
+     * Funcion que verifica si existe el alumno
+     * @param alumno a buscar
+     * @return true/false
+     */
+    public boolean alumnoExiste(Alumnos alumno) {
+<span class="nc" id="L30">        return listaalumnos.contains(alumno);</span>
+    }
+
+    /**
+     * Funcion que verifica si existe el profesor
+     * @param profesor a buscar
+     * @return true/false
+     */
+    public boolean profesorExiste(Profesores profesor) {
+<span class="nc" id="L39">        return listaprofesores.contains(profesor);</span>
+    }
+
+    /**
+     * Funcion que verifica si existe el aula
+     * @param aula a buscar
+     * @return true/false
+     */
+    public boolean aulaExiste(Aulas aula) {
+<span class="nc" id="L48">        return listaaulas.contains(aula);</span>
+    }
+
+    /**
+     * Funcion que verifica si existe la nota
+     * @param nota a buscar
+     * @return true/false
+     */
+    public boolean notaExiste(Notas nota) {
+<span class="nc" id="L57">        return listanotas.contains(nota);</span>
+    }
+
+    /**
+     * Metodo para insertar un alumno en la lista
+     * @param alumno a insertar
+     * @throws AlumnoException error controlado
+     */
+    public void insertarAlumno(Alumnos alumno) throws AlumnoException {
+<span class="nc bnc" id="L66" title="All 2 branches missed.">        if (!alumnoExiste(alumno)) {</span>
+<span class="nc" id="L67">            listaalumnos.add(alumno);</span>
+        } else {
+<span class="nc" id="L69">            throw new AlumnoException(&quot;El alumno ya esta en la lista&quot; + alumno);</span>
+        }
+<span class="nc" id="L71">    }</span>
+
+    /**
+     * Metodo para insertar un profesor en la lista
+     * @param profesor a insertar
+     * @throws ProfesorException error controlado
+     */
+    public void insertarProfesor(Profesores profesor) throws ProfesorException {
+<span class="nc bnc" id="L79" title="All 2 branches missed.">        if (!profesorExiste(profesor)) {</span>
+<span class="nc" id="L80">            listaprofesores.add(profesor);</span>
+        } else {
+<span class="nc" id="L82">            throw new ProfesorException(&quot;El profesor ya esta en la lista&quot; + profesor);</span>
+        }
+<span class="nc" id="L84">    }</span>
+
+    /**
+     * Metodo para insertar un aula en la lista
+     * @param aula a insertar
+     * @throws AulaException error controlado
+     */
+    public void insertarAula(Aulas aula) throws AulaException {
+<span class="nc bnc" id="L92" title="All 2 branches missed.">        if (!aulaExiste(aula)) {</span>
+<span class="nc" id="L93">            listaaulas.add(aula);</span>
+        } else {
+<span class="nc" id="L95">            throw new AulaException(&quot;El aula ya esta en la lista&quot; + aula);</span>
+        }
+<span class="nc" id="L97">    }</span>
+
+    /**
+     * Metodo para insertar nota de una asignatura
+     * @param nota a insertar
+     */
+    public void insertarNota(Notas nota) {
+<span class="nc" id="L104">                listanotas.add(nota);</span>
+<span class="nc" id="L105">    }</span>
+
+
+
+
+    
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>
