@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Persona.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Instituto</a> &gt; <a href="index.source.html" class="el_package">es.iespuertodelacruz.nefta</a> &gt; <span class="el_source">Persona.java</span></div><h1>Persona.java</h1><pre class="source lang-java linenums">package es.iespuertodelacruz.nefta;
+
+import java.util.Objects;
+
+import es.iespuertodelacruz.nefta.validaciones.ValidarDni;
+
+public class Persona extends ValidarDni {
+
+    private static final long serialVersionUID = 2582102258992445060L;
+
+    String dni;
+    String nombre;
+    String apellidos;
+
+    /**
+     * Constructor vacio
+     */
+<span class="nc" id="L18">    public Persona() {</span>
+<span class="nc" id="L19">    }</span>
+
+    /**
+     * Constructor con parametros
+     * 
+     * @param dni       de la persona
+     * @param nombre    de la persona
+     * @param apellidos de la persona
+     * @throws Exception
+     */
+<span class="nc" id="L29">    public Persona(String dni, String nombre, String apellidos) throws Exception {</span>
+<span class="nc" id="L30">        validarDni(dni);</span>
+<span class="nc" id="L31">        this.dni = dni;</span>
+<span class="nc" id="L32">        this.nombre = nombre;</span>
+<span class="nc" id="L33">        this.apellidos = apellidos;</span>
+<span class="nc" id="L34">    }</span>
+
+    /**
+     * Getters de la clase
+     * 
+     * @return
+     */
+    public String getDni() {
+<span class="nc" id="L42">        return this.dni;</span>
+    }
+
+    public String getNombre() {
+<span class="nc" id="L46">        return this.nombre;</span>
+    }
+
+    public String getApellidos() {
+<span class="nc" id="L50">        return this.apellidos;</span>
+    }
+
+    /**
+     * Metodo equals
+     */
+    @Override
+    public boolean equals(Object o) {
+<span class="nc bnc" id="L58" title="All 2 branches missed.">        if (o == this)</span>
+<span class="nc" id="L59">            return true;</span>
+<span class="nc bnc" id="L60" title="All 2 branches missed.">        if (!(o instanceof Persona)) {</span>
+<span class="nc" id="L61">            return false;</span>
+        }
+<span class="nc" id="L63">        Persona persona = (Persona) o;</span>
+<span class="nc bnc" id="L64" title="All 4 branches missed.">        return Objects.equals(dni, persona.dni) &amp;&amp; Objects.equals(nombre, persona.nombre)</span>
+<span class="nc bnc" id="L65" title="All 2 branches missed.">                &amp;&amp; Objects.equals(apellidos, persona.apellidos);</span>
+    }
+
+    /**
+     * Metodo toString
+     */
+    @Override
+    public String toString() {
+<span class="nc" id="L73">        return getNombre() + &quot;-&quot; + getApellidos() + &quot;-&quot; + getDni() + &quot;\n&quot;;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>
