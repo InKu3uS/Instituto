@@ -1,17 +1,20 @@
 package es.iespuertodelacruz.nefta;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class Profesor extends Persona {
 
     private static final long serialVersionUID = -7098513995355326641L;
 
-    public Aulas aulas;
+    ArrayList<Aula> aulas;
 
     /**
      * Constructor vacio
      */
     public Profesor() {
+
+        aulas = new ArrayList<>();
     }
 
     /**
@@ -23,20 +26,21 @@ public class Profesor extends Persona {
      * @param aulas     en las que imparte clase el profesor
      * @throws Exception
      */
-    public Profesor(String dni, String nombre, String apellidos, Aulas aulas) throws Exception {
+    public Profesor(String dni, String nombre, String apellidos, ArrayList<Aula> aulas) throws Exception {
         super(dni, nombre, apellidos);
         this.aulas = aulas;
     }
 
     /**
-     * Get de aulas
+     * Getters y Setters
      * 
      * @return
      */
-    public Aulas getAulas() {
+    public ArrayList<Aula> getAulas() {
         return this.aulas;
     }
 
+    
     /**
      * Metodo equals
      */
@@ -56,7 +60,7 @@ public class Profesor extends Persona {
      */
     @Override
     public String toString() {
-        return getNombre() + "-" + getApellidos() + "-" + getDni() + "-" + getAulas() + "\n";
+        return getNombre() + "-" + getApellidos() + "-" + getDni() + "-" + aulas.toString() + "\n";
     }
 
 }

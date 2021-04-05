@@ -1,11 +1,12 @@
+/home/nefta/NetBeansProjects/Instituto/src/main/java/es/iespuertodelacruz/nefta/Profesor.java
 /home/nefta/NetBeansProjects/Instituto/src/main/java/es/iespuertodelacruz/nefta/Instituto.java
-/home/nefta/NetBeansProjects/Instituto/src/main/java/es/iespuertodelacruz/nefta/validaciones/ValidarDni.java
+/home/nefta/NetBeansProjects/Instituto/src/main/java/es/iespuertodelacruz/nefta/Nota.java
+/home/nefta/NetBeansProjects/Instituto/src/main/java/es/iespuertodelacruz/nefta/exceptions/FicheroException.java
 /home/nefta/NetBeansProjects/Instituto/src/main/java/es/iespuertodelacruz/nefta/exceptions/AlumnoException.java
 /home/nefta/NetBeansProjects/Instituto/src/main/java/es/iespuertodelacruz/nefta/exceptions/ProfesorException.java
 /home/nefta/NetBeansProjects/Instituto/src/main/java/es/iespuertodelacruz/nefta/Persona.java
-/home/nefta/NetBeansProjects/Instituto/src/main/java/es/iespuertodelacruz/nefta/Notas.java
-/home/nefta/NetBeansProjects/Instituto/src/main/java/es/iespuertodelacruz/nefta/Aulas.java
+/home/nefta/NetBeansProjects/Instituto/src/main/java/es/iespuertodelacruz/nefta/Alumno.java
+/home/nefta/NetBeansProjects/Instituto/src/main/java/es/iespuertodelacruz/nefta/Aula.java
 /home/nefta/NetBeansProjects/Instituto/src/main/java/es/iespuertodelacruz/nefta/exceptions/AulaException.java
+/home/nefta/NetBeansProjects/Instituto/src/main/java/es/iespuertodelacruz/nefta/validaciones/Validar.java
 /home/nefta/NetBeansProjects/Instituto/src/main/java/es/iespuertodelacruz/nefta/exceptions/NotasException.java
-/home/nefta/NetBeansProjects/Instituto/src/main/java/es/iespuertodelacruz/nefta/Alumnos.java
-/home/nefta/NetBeansProjects/Instituto/src/main/java/es/iespuertodelacruz/nefta/Profesores.java

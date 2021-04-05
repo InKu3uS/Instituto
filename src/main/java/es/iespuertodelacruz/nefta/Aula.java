@@ -1,15 +1,19 @@
 package es.iespuertodelacruz.nefta;
 
-public class Aulas {
+import java.util.ArrayList;
+
+public class Aula {
 
     int piso;
     int numero;
-    public Alumno alumnos;
+    ArrayList<Alumno> alumnos;
 
     /**
      * Constructor vacio
      */
-    public Aulas() {
+    public Aula() {
+
+        alumnos = new ArrayList<>();
     }
 
     /**
@@ -18,7 +22,7 @@ public class Aulas {
      * @param piso   del aula
      * @param numero del aula
      */
-    public Aulas(int piso, int numero, Alumno alumnos) {
+    public Aula(int piso, int numero, ArrayList<Alumno> alumnos) {
         this.piso = piso;
         this.numero = numero;
         this.alumnos = alumnos;
@@ -37,12 +41,8 @@ public class Aulas {
         return this.numero;
     }
 
-    public Alumno getAlumnos() {
+    public ArrayList<Alumno> getAlumnos() {
         return this.alumnos;
-    }
-
-    public void setAlumnos(Alumno alumnos) {
-        this.alumnos = alumnos;
     }
 
     /**
@@ -52,10 +52,10 @@ public class Aulas {
     public boolean equals(Object o) {
         if (o == this)
             return true;
-        if (!(o instanceof Aulas)) {
+        if (!(o instanceof Aula)) {
             return false;
         }
-        Aulas aulas = (Aulas) o;
+        Aula aulas = (Aula) o;
         return piso == aulas.piso && numero == aulas.numero;
     }
 

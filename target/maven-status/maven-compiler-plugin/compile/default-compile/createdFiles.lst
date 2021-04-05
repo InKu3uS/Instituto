@@ -1,11 +1,12 @@
-es/iespuertodelacruz/nefta/validaciones/ValidarDni.class
-es/iespuertodelacruz/nefta/Aulas.class
+es/iespuertodelacruz/nefta/Profesor.class
+es/iespuertodelacruz/nefta/exceptions/FicheroException.class
 es/iespuertodelacruz/nefta/exceptions/NotasException.class
+es/iespuertodelacruz/nefta/Nota.class
 es/iespuertodelacruz/nefta/Instituto.class
-es/iespuertodelacruz/nefta/Alumnos.class
-es/iespuertodelacruz/nefta/Notas.class
+es/iespuertodelacruz/nefta/Aula.class
+es/iespuertodelacruz/nefta/Alumno.class
+es/iespuertodelacruz/nefta/validaciones/Validar.class
 es/iespuertodelacruz/nefta/exceptions/AulaException.class
 es/iespuertodelacruz/nefta/Persona.class
 es/iespuertodelacruz/nefta/exceptions/AlumnoException.class
-es/iespuertodelacruz/nefta/Profesores.class
 es/iespuertodelacruz/nefta/exceptions/ProfesorException.class

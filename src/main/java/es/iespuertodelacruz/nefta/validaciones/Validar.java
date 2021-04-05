@@ -3,7 +3,7 @@ package es.iespuertodelacruz.nefta.validaciones;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class ValidarDni extends Exception {
+public class Validar extends Exception {
 
     private static final long serialVersionUID = 2602990398222134828L;
 
@@ -18,7 +18,7 @@ public class ValidarDni extends Exception {
      * @param valor a evaluar
      * @return true/false en funcion de si es correcto o no
      */
-    public void validarDni(String valor) throws Exception {
+    public void Dni(String valor) throws Exception {
         boolean resultado = false;
         this.pattern = Pattern.compile(patron);
         this.matcher = pattern.matcher(valor);

@@ -2,12 +2,12 @@ package es.iespuertodelacruz.nefta;
 
 import java.util.Objects;
 
-public class Notas {
+public class Nota {
 
     String nombre;
     double calificacion;
 
-    public Notas() {
+    public Nota() {
 
     }
 
@@ -17,7 +17,7 @@ public class Notas {
      * @param nombre       de la asignatura
      * @param calificacion nota de la asignatura
      */
-    public Notas(String nombre, double calificacion) {
+    public Nota(String nombre, double calificacion) {
         this.nombre = nombre;
         this.calificacion = calificacion;
     }
@@ -31,16 +31,8 @@ public class Notas {
         return this.nombre;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
     public double getCalificacion() {
         return this.calificacion;
-    }
-
-    public void setCalificacion(double calificacion) {
-        this.calificacion = calificacion;
     }
 
     /**
@@ -50,10 +42,10 @@ public class Notas {
     public boolean equals(Object o) {
         if (o == this)
             return true;
-        if (!(o instanceof Notas)) {
+        if (!(o instanceof Nota)) {
             return false;
         }
-        Notas notas = (Notas) o;
+        Nota notas = (Nota) o;
         return Objects.equals(nombre, notas.nombre) && Objects.equals(calificacion, notas.calificacion);
     }
 
@@ -62,7 +54,7 @@ public class Notas {
      */
     @Override
     public String toString() {
-        return getNombre() + ":" + getCalificacion() + "\n";
+        return getNombre() + ":" + getCalificacion();
     }
 
 }

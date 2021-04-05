@@ -1,112 +1,302 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Instituto.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Instituto</a> &gt; <a href="index.source.html" class="el_package">es.iespuertodelacruz.nefta</a> &gt; <span class="el_source">Instituto.java</span></div><h1>Instituto.java</h1><pre class="source lang-java linenums">package es.iespuertodelacruz.nefta;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Scanner;
+import java.io.File;
 
 import es.iespuertodelacruz.nefta.exceptions.AlumnoException;
 import es.iespuertodelacruz.nefta.exceptions.AulaException;
+import es.iespuertodelacruz.nefta.exceptions.FicheroException;
 import es.iespuertodelacruz.nefta.exceptions.ProfesorException;
 
 public class Instituto {
 
-<span class="nc" id="L11">    ArrayList&lt;Alumnos&gt; listaalumnos = null;</span>
-<span class="nc" id="L12">    ArrayList&lt;Notas&gt; listanotas = null;</span>
-<span class="nc" id="L13">    ArrayList&lt;Aulas&gt; listaaulas = null;</span>
-<span class="nc" id="L14">    ArrayList&lt;Profesores&gt; listaprofesores = null;</span>
+<span class="fc" id="L16">    ArrayList&lt;Alumno&gt; alumnos = null;</span>
+<span class="fc" id="L17">    ArrayList&lt;Aula&gt; aulas = null;</span>
+<span class="fc" id="L18">    ArrayList&lt;Profesor&gt; profesores = null;</span>
+<span class="fc" id="L19">    ArrayList&lt;Nota&gt; notas = null;</span>
 
-<span class="nc" id="L16">    public Instituto(){</span>
-<span class="nc" id="L17">        listaalumnos = new ArrayList&lt;&gt;();</span>
-<span class="nc" id="L18">        listanotas = new ArrayList&lt;&gt;();</span>
-<span class="nc" id="L19">        listaaulas = new ArrayList&lt;&gt;();</span>
-<span class="nc" id="L20">        listaprofesores = new ArrayList&lt;&gt;();</span>
-        
-<span class="nc" id="L22">    }</span>
+<span class="fc" id="L21">    public Instituto() {</span>
+<span class="fc" id="L22">        alumnos = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L23">        aulas = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L24">        profesores = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L25">        notas = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L26">    }</span>
 
     /**
      * Funcion que verifica si existe el alumno
+     *
      * @param alumno a buscar
      * @return true/false
      */
-    public boolean alumnoExiste(Alumnos alumno) {
-<span class="nc" id="L30">        return listaalumnos.contains(alumno);</span>
-    }
-
-    /**
-     * Funcion que verifica si existe el profesor
-     * @param profesor a buscar
-     * @return true/false
-     */
-    public boolean profesorExiste(Profesores profesor) {
-<span class="nc" id="L39">        return listaprofesores.contains(profesor);</span>
-    }
-
-    /**
-     * Funcion que verifica si existe el aula
-     * @param aula a buscar
-     * @return true/false
-     */
-    public boolean aulaExiste(Aulas aula) {
-<span class="nc" id="L48">        return listaaulas.contains(aula);</span>
+    public boolean alumnoExiste(Alumno alumno) {
+<span class="fc" id="L35">        return alumnos.contains(alumno);</span>
     }
 
     /**
      * Funcion que verifica si existe la nota
+     *
      * @param nota a buscar
      * @return true/false
      */
-    public boolean notaExiste(Notas nota) {
-<span class="nc" id="L57">        return listanotas.contains(nota);</span>
+    public boolean notaExiste(Nota nota) {
+<span class="fc" id="L45">        return notas.contains(nota);</span>
+    }
+
+    /**
+     * Funcion que verifica si existe el profesor
+     *
+     * @param profesor a buscar
+     * @return true/false
+     */
+    public boolean profesorExiste(Profesor profesor) {
+<span class="fc" id="L55">        return profesores.contains(profesor);</span>
+    }
+
+    /**
+     * Funcion que verifica si existe el aula
+     *
+     * @param aula a buscar
+     * @return true/false
+     */
+    public boolean aulaExiste(Aula aula) {
+<span class="fc" id="L65">        return aulas.contains(aula);</span>
     }
 
     /**
      * Metodo para insertar un alumno en la lista
+     *
      * @param alumno a insertar
      * @throws AlumnoException error controlado
      */
-    public void insertarAlumno(Alumnos alumno) throws AlumnoException {
-<span class="nc bnc" id="L66" title="All 2 branches missed.">        if (!alumnoExiste(alumno)) {</span>
-<span class="nc" id="L67">            listaalumnos.add(alumno);</span>
+    public void insertarAlumno(Alumno alumno) throws AlumnoException {
+<span class="pc bpc" id="L75" title="1 of 2 branches missed.">        if (!alumnoExiste(alumno)) {</span>
+<span class="fc" id="L76">            alumnos.add(alumno);</span>
         } else {
-<span class="nc" id="L69">            throw new AlumnoException(&quot;El alumno ya esta en la lista&quot; + alumno);</span>
+<span class="nc" id="L78">            throw new AlumnoException(&quot;El alumno ya esta en la lista&quot; + alumno);</span>
         }
-<span class="nc" id="L71">    }</span>
+<span class="fc" id="L80">    }</span>
+
+    /**
+     * Metodo para insertar una nota
+     *
+     * @param nota a insertar
+     */
+    public void insertarNota(Nota nota) {
+<span class="fc" id="L88">        notas.add(nota);</span>
+<span class="fc" id="L89">    }</span>
+
+    /**
+     * Metodo para eliminar un alumno de la lista
+     *
+     * @param alumno a eliminar
+     * @throws AlumnoException error controlado
+     */
+    public void borrarAlumno(Alumno alumno) throws AlumnoException {
+<span class="pc bpc" id="L98" title="1 of 2 branches missed.">        if (alumnoExiste(alumno)) {</span>
+<span class="fc" id="L99">            alumnos.remove(alumno);</span>
+        } else {
+<span class="nc" id="L101">            throw new AlumnoException(&quot;El alumno no existe en la lista&quot; + alumno);</span>
+        }
+<span class="fc" id="L103">    }</span>
 
     /**
      * Metodo para insertar un profesor en la lista
+     *
      * @param profesor a insertar
      * @throws ProfesorException error controlado
      */
-    public void insertarProfesor(Profesores profesor) throws ProfesorException {
-<span class="nc bnc" id="L79" title="All 2 branches missed.">        if (!profesorExiste(profesor)) {</span>
-<span class="nc" id="L80">            listaprofesores.add(profesor);</span>
+    public void insertarProfesor(Profesor profesor) throws ProfesorException {
+<span class="pc bpc" id="L112" title="1 of 2 branches missed.">        if (!profesorExiste(profesor)) {</span>
+<span class="fc" id="L113">            profesores.add(profesor);</span>
         } else {
-<span class="nc" id="L82">            throw new ProfesorException(&quot;El profesor ya esta en la lista&quot; + profesor);</span>
+<span class="nc" id="L115">            throw new ProfesorException(&quot;El profesor ya esta en la lista&quot; + profesor);</span>
         }
-<span class="nc" id="L84">    }</span>
+<span class="fc" id="L117">    }</span>
+
+    /**
+     * Metodo para eliminar un profesor de la lista
+     *
+     * @param profesor a eliminar
+     * @throws ProfesorException error controlado
+     */
+    public void borrarProfesor(Profesor profesor) throws ProfesorException {
+<span class="pc bpc" id="L126" title="1 of 2 branches missed.">        if (profesorExiste(profesor)) {</span>
+<span class="fc" id="L127">            profesores.remove(profesor);</span>
+        } else {
+<span class="nc" id="L129">            throw new ProfesorException(&quot;El profesor no existe en la lista&quot; + profesor);</span>
+        }
+<span class="fc" id="L131">    }</span>
 
     /**
      * Metodo para insertar un aula en la lista
+     *
      * @param aula a insertar
      * @throws AulaException error controlado
      */
-    public void insertarAula(Aulas aula) throws AulaException {
-<span class="nc bnc" id="L92" title="All 2 branches missed.">        if (!aulaExiste(aula)) {</span>
-<span class="nc" id="L93">            listaaulas.add(aula);</span>
+    public void insertarAula(Aula aula) throws AulaException {
+<span class="pc bpc" id="L140" title="1 of 2 branches missed.">        if (!aulaExiste(aula)) {</span>
+<span class="fc" id="L141">            aulas.add(aula);</span>
         } else {
-<span class="nc" id="L95">            throw new AulaException(&quot;El aula ya esta en la lista&quot; + aula);</span>
+<span class="nc" id="L143">            throw new AulaException(&quot;El aula ya esta en la lista&quot; + aula);</span>
         }
-<span class="nc" id="L97">    }</span>
+<span class="fc" id="L145">    }</span>
 
     /**
-     * Metodo para insertar nota de una asignatura
-     * @param nota a insertar
+     * Metodo para borrar un aula de la lista
+     *
+     * @param aula a eliminar
+     * @throws AulaException error controlado
      */
-    public void insertarNota(Notas nota) {
-<span class="nc" id="L104">                listanotas.add(nota);</span>
-<span class="nc" id="L105">    }</span>
+    public void borrarAula(Aula aula) throws AulaException {
+<span class="pc bpc" id="L154" title="1 of 2 branches missed.">        if (aulaExiste(aula)) {</span>
+<span class="fc" id="L155">            aulas.remove(aula);</span>
+        } else {
+<span class="nc" id="L157">            throw new AulaException(&quot;El aula no existe en la lista&quot; + aula);</span>
+        }
+<span class="fc" id="L159">    }</span>
 
+    /**
+     * Metodo que muestra las notas de todas las asignaturas de un alumno
+     *
+     * @param dni del alumno
+     * @return lista de notas del alumno
+     */
+    public ArrayList&lt;Double&gt; verNotas(String dni) {
+<span class="fc" id="L168">        ArrayList&lt;Double&gt; notaAlumnos = new ArrayList&lt;&gt;();</span>
 
+<span class="fc bfc" id="L170" title="All 2 branches covered.">        for (int i = 0; i &lt; notas.size(); i++) {</span>
+<span class="fc" id="L171">            Alumno alumno = alumnos.get(i);</span>
+<span class="pc bpc" id="L172" title="1 of 2 branches missed.">            if (alumno.getDni().equals(dni)) {</span>
+<span class="fc" id="L173">                notaAlumnos.add(notas.get(i).getCalificacion());</span>
+            }
+        }
+<span class="fc" id="L176">        return notaAlumnos;</span>
+    }
 
+    /**
+     * Busca al alumno por el DNI
+     * 
+     * @param dni del alumno
+     * @return Objeto alumno
+     */
+    public Alumno buscaAlumno(String dni) {
+<span class="fc" id="L186">        Alumno alumno = null;</span>
+<span class="fc bfc" id="L187" title="All 2 branches covered.">        for (int i = 0; i &lt; alumnos.size(); i++) {</span>
+<span class="pc bpc" id="L188" title="1 of 2 branches missed.">            if (alumnos.get(i).getDni().equals(dni)) {</span>
+<span class="fc" id="L189">                alumno = alumnos.get(i);</span>
+            }
+        }
+<span class="fc" id="L192">        return alumno;</span>
+    }
 
-    
+    /**
+     * Lista de alumnos
+     * 
+     * @return alumnos
+     */
+    public ArrayList&lt;Nota&gt; notasAlumno() {
+<span class="fc" id="L201">        ArrayList&lt;Nota&gt; notasalumno = new ArrayList&lt;&gt;();</span>
+<span class="fc bfc" id="L202" title="All 2 branches covered.">        for (int i = 0; i &lt; notas.size(); i++) {</span>
+<span class="fc" id="L203">            notasalumno.add(notas.get(i));</span>
+        }
+<span class="fc" id="L205">        return notasalumno;</span>
+    }
+
+    /**
+     * Metodo que almacena las notas todos los alumnos
+     *
+     * @throws FicheroException error controlado
+     */
+    public void almacenarTodasNotas(String nombre) throws FicheroException {
+<span class="fc" id="L214">        FileWriter escribir = null;</span>
+        try {
+<span class="fc" id="L216">            escribir = new FileWriter(nombre);</span>
+<span class="fc" id="L217">            escribir.write(String.valueOf(notasAlumno()));</span>
+<span class="nc" id="L218">        } catch (Exception e) {</span>
+<span class="nc" id="L219">            throw new FicheroException(&quot;El fichero no se puede crear&quot;);</span>
+        } finally {
+<span class="pc bpc" id="L221" title="1 of 2 branches missed.">            if (escribir != null) {</span>
+                try {
+<span class="fc" id="L223">                    escribir.close();</span>
+<span class="nc" id="L224">                } catch (IOException e) {</span>
+<span class="nc" id="L225">                    throw new FicheroException(&quot;El fichero no se pudo cerrar&quot;, e);</span>
+<span class="fc" id="L226">                }</span>
+            }
+        }
+<span class="fc" id="L229">    }</span>
+
+    /**
+     * Metodo que almacena las notas de un alumno en un fichero
+     *
+     * @throws FicheroException error controlado
+     */
+    public void almacenarNotasAlumno(String dni) throws FicheroException {
+<span class="fc" id="L237">        Alumno alumno = null;</span>
+<span class="fc" id="L238">        FileWriter escribir = null;</span>
+        try {
+<span class="pc bpc" id="L240" title="1 of 2 branches missed.">            if (buscaAlumno(dni) != null) {</span>
+<span class="fc" id="L241">                alumno = buscaAlumno(dni);</span>
+<span class="fc" id="L242">                escribir = new FileWriter(alumno.getNombre() + &quot;_&quot; + alumno.getApellidos() + &quot;.txt&quot;);</span>
+<span class="fc" id="L243">                escribir.write(buscaAlumno(dni) + String.valueOf(verNotas(dni)));</span>
+            }
+<span class="nc" id="L245">        } catch (Exception e) {</span>
+<span class="nc" id="L246">            throw new FicheroException(&quot;El fichero no se puede crear&quot;);</span>
+        } finally {
+<span class="pc bpc" id="L248" title="1 of 2 branches missed.">            if (escribir != null) {</span>
+                try {
+<span class="fc" id="L250">                    escribir.close();</span>
+<span class="nc" id="L251">                } catch (IOException e) {</span>
+<span class="nc" id="L252">                    throw new FicheroException(&quot;El fichero no se pudo cerrar&quot;, e);</span>
+<span class="fc" id="L253">                }</span>
+            }
+        }
+<span class="fc" id="L256">    }</span>
+
+    /**
+     * Metodo que comprueba que un fichero existe
+     * 
+     * @param fichero a buscar
+     * @return true o false
+     */
+    public boolean validarFichero(File fichero) {
+<span class="fc" id="L265">        return fichero.exists();</span>
+    }
+
+    public String leer(String nombre) throws FicheroException {
+
+<span class="fc" id="L270">        StringBuilder informacion = null;</span>
+<span class="fc" id="L271">        File fichero = null;</span>
+<span class="fc" id="L272">        Scanner scanner = null;</span>
+
+        try {
+
+<span class="fc" id="L276">            fichero = new File(nombre);</span>
+
+<span class="pc bpc" id="L278" title="1 of 2 branches missed.">            if (!validarFichero(fichero)) {</span>
+
+<span class="nc" id="L280">                throw new FicheroException(&quot;El fichero a leer no existe&quot;);</span>
+            }
+<span class="fc" id="L282">            informacion = new StringBuilder();</span>
+<span class="fc" id="L283">            scanner = new Scanner(fichero);</span>
+
+<span class="fc bfc" id="L285" title="All 2 branches covered.">            while (scanner.hasNextLine()) {</span>
+<span class="fc" id="L286">                String linea = scanner.nextLine();</span>
+<span class="fc" id="L287">                informacion.append(linea + &quot;\n&quot;);</span>
+<span class="fc" id="L288">            }</span>
+<span class="nc" id="L289">        } catch (FicheroException e) {</span>
+<span class="nc" id="L290">            throw e;</span>
+<span class="nc" id="L291">        } catch (Exception e) {</span>
+<span class="nc" id="L292">            throw new FicheroException(&quot;Se ha producido un error en la lectura del fichero&quot;, e);</span>
+        } finally {
+<span class="pc bpc" id="L294" title="1 of 2 branches missed.">            if (scanner != null) {</span>
+<span class="fc" id="L295">                scanner.close();</span>
+            }
+        }
+<span class="fc" id="L298">        return informacion.toString();</span>
+    }
+
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

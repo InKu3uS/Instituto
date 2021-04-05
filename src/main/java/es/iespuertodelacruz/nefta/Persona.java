@@ -2,9 +2,9 @@ package es.iespuertodelacruz.nefta;
 
 import java.util.Objects;
 
-import es.iespuertodelacruz.nefta.validaciones.ValidarDni;
+import es.iespuertodelacruz.nefta.validaciones.Validar;
 
-public class Persona extends ValidarDni {
+public class Persona extends Validar {
 
     private static final long serialVersionUID = 2582102258992445060L;
 
@@ -27,7 +27,7 @@ public class Persona extends ValidarDni {
      * @throws Exception
      */
     public Persona(String dni, String nombre, String apellidos) throws Exception {
-        validarDni(dni);
+        Dni(dni);
         this.dni = dni;
         this.nombre = nombre;
         this.apellidos = apellidos;

@@ -2,9 +2,9 @@
 
 import java.util.Objects;
 
-import es.iespuertodelacruz.nefta.validaciones.ValidarDni;
+import es.iespuertodelacruz.nefta.validaciones.Validar;
 
-public class Persona extends ValidarDni {
+public class Persona extends Validar {
 
     private static final long serialVersionUID = 2582102258992445060L;
 
@@ -26,12 +26,12 @@ public class Persona extends ValidarDni {
      * @param apellidos de la persona
      * @throws Exception
      */
-<span class="nc" id="L29">    public Persona(String dni, String nombre, String apellidos) throws Exception {</span>
-<span class="nc" id="L30">        validarDni(dni);</span>
-<span class="nc" id="L31">        this.dni = dni;</span>
-<span class="nc" id="L32">        this.nombre = nombre;</span>
-<span class="nc" id="L33">        this.apellidos = apellidos;</span>
-<span class="nc" id="L34">    }</span>
+<span class="fc" id="L29">    public Persona(String dni, String nombre, String apellidos) throws Exception {</span>
+<span class="fc" id="L30">        Dni(dni);</span>
+<span class="fc" id="L31">        this.dni = dni;</span>
+<span class="fc" id="L32">        this.nombre = nombre;</span>
+<span class="fc" id="L33">        this.apellidos = apellidos;</span>
+<span class="fc" id="L34">    }</span>
 
     /**
      * Getters de la clase
@@ -39,15 +39,15 @@ public class Persona extends ValidarDni {
      * @return
      */
     public String getDni() {
-<span class="nc" id="L42">        return this.dni;</span>
+<span class="fc" id="L42">        return this.dni;</span>
     }
 
     public String getNombre() {
-<span class="nc" id="L46">        return this.nombre;</span>
+<span class="fc" id="L46">        return this.nombre;</span>
     }
 
     public String getApellidos() {
-<span class="nc" id="L50">        return this.apellidos;</span>
+<span class="fc" id="L50">        return this.apellidos;</span>
     }
 
     /**

@@ -7,12 +7,14 @@ public class Alumno extends Persona {
 
     private static final long serialVersionUID = -8998687794343508825L;
 
-    ArrayList<Notas> listanotas = null;
-    
+    ArrayList<Nota> notas;
+
     /**
      * Constructor vacio
      */
     public Alumno() {
+
+        notas = new ArrayList<>();
 
     }
 
@@ -25,17 +27,17 @@ public class Alumno extends Persona {
      * @param notas     del alumno
      * @throws Exception
      */
-    public Alumno(String dni, String nombre, String apellidos, Notas notas) throws Exception {
+    public Alumno(String dni, String nombre, String apellidos, ArrayList<Nota> notas) throws Exception {
         super(dni, nombre, apellidos);
         this.notas = notas;
     }
 
     /**
-     * Getter de notas
+     * Getter de la arraylist notas
      * 
      * @return notas
      */
-    public Notas getNotas() {
+    public ArrayList<Nota> getNotas() {
         return this.notas;
     }
 
@@ -58,7 +60,7 @@ public class Alumno extends Persona {
      */
     @Override
     public String toString() {
-        return getNombre() + "-" + getApellidos() + "-" + getDni() + "-" + getNotas() + "\n";
+        return getNombre() + "-" + getApellidos() + "-" + getDni() + "-" + notas.toString();
     }
 
 }
